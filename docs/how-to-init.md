@@ -3,5 +3,5 @@
 ## Initial new golang package
 
 ```sh
-go mod init example.com/m/v2
+go mod init go-boilerplate
 ```
