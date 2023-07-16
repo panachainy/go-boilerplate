@@ -7,7 +7,8 @@ RUN go mod download
 
 COPY . .
 
-RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o api ./cmd
+ENV CGO_ENABLED=0 GOOS=linux GOARCH=amd64
+RUN go build -o api ./cmd
 
 FROM alpine:latest
 RUN apk add --update --no-cache ca-certificates git
