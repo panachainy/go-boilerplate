@@ -15,11 +15,11 @@ type Configuration struct {
 }
 
 var (
-	configOnce sync.Once
 	// default values
 	config = Configuration{
 		ExampleConfig: "example config value",
 	}
+	configOnce sync.Once
 )
 
 func Provide() *Configuration {
