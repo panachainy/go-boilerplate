@@ -5,6 +5,7 @@ import (
 	"sync"
 
 	"github.com/gofiber/fiber/v2"
+	"github.com/sirupsen/logrus"
 )
 
 var (
@@ -15,10 +16,12 @@ var (
 type Application struct {
 	Server *fiber.App
 	Config *config.Configuration
+	Log    *logrus.Logger
 }
 
 func Provide(
 	config *config.Configuration,
+	log *logrus.Logger,
 ) *Application {
 	appOnce.Do(func() {
 		app = &Application{
@@ -42,8 +45,8 @@ func Provide(
 					},
 				},
 			),
+			Log: log,
 		}
-
 	})
 
 	return app

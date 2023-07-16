@@ -10,6 +10,7 @@ import (
 func main() {
 	application, err := app.Wire()
 	if err != nil {
+
 		log.Fatalf("Failed auto injection to initialize application: %v", err)
 	}
 
@@ -22,4 +23,6 @@ func main() {
 	if err := application.Server.Listen(":8080"); err != nil {
 		log.Fatal(err)
 	}
+
+	application.Log.Info("Application started successfully")
 }
