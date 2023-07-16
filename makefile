@@ -33,4 +33,4 @@ generate:
 
 b: build
 build:
-	go build -o api ./cmd
+	go build -o apiserver ./cmd

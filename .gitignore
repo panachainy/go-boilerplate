@@ -26,5 +26,5 @@ go.work
 # Env file
 .env
 
-api
+apiserver
 covprofile
