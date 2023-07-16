@@ -1,6 +1,10 @@
 dev:
 	air
 
+i:
+	go get ./cmd
+	go mod tidy
+
 t: test
 test:
 	go test ./...
