@@ -5,7 +5,6 @@ import (
 	"log"
 
 	"github.com/gofiber/fiber/v2"
-	_ "github.com/google/wire/cmd/wire"
 )
 
 func main() {
