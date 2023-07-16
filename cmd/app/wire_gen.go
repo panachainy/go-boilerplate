@@ -8,12 +8,14 @@ package app
 
 import (
 	"go-boilerplate/cmd/config"
+	"go-boilerplate/cmd/log"
 )
 
 // Injectors from wire.go:
 
 func Wire() (*Application, error) {
 	configuration := config.Provide()
-	application := Provide(configuration)
+	logger := log.Provide()
+	application := Provide(configuration, logger)
 	return application, nil
 }
