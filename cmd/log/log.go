@@ -13,27 +13,31 @@ var (
 )
 
 func Provide() *logrus.Logger {
-	logLevel, ok := os.LookupEnv("LOG_LEVEL")
+	logOnce.Do(func() {
 
-	// LOG_LEVEL not set, let's default to debug
-	if !ok {
-		logLevel = "debug"
-	}
+		logLevel, ok := os.LookupEnv("LOG_LEVEL")
 
-	// parse string, this is built-in feature of logrus
-	logrusLevel, err := logrus.ParseLevel(logLevel)
-	if err != nil {
-		logrusLevel = logrus.DebugLevel
-	}
+		// LOG_LEVEL not set, let's default to debug
+		if !ok {
+			logLevel = "debug"
+		}
 
-	// set global log level
-	logrus.SetLevel(logrusLevel)
+		// parse string, this is built-in feature of logrus
+		logrusLevel, err := logrus.ParseLevel(logLevel)
+		if err != nil {
+			logrusLevel = logrus.DebugLevel
+		}
 
-	// TimestampFormat: "2006-01-02 150405"
-	logrus.SetFormatter(&logrus.TextFormatter{FullTimestamp: true})
+		// set global log level
+		logrus.SetLevel(logrusLevel)
 
-	logrus.SetOutput(os.Stdout)
+		// TimestampFormat: "2006-01-02 150405"
+		logrus.SetFormatter(&logrus.TextFormatter{FullTimestamp: true})
 
-	logrus.Infoln("[LOGRUS-CONFIG] Log level: ", logrus.GetLevel())
-	return logrus.New()
+		logrus.SetOutput(os.Stdout)
+
+		logrus.Infoln("[LOGRUS-CONFIG] Log level: ", logrus.GetLevel())
+		log = logrus.New()
+	})
+	return log
 }
