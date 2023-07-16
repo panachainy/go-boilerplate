@@ -16,3 +16,7 @@ fmt:
 g: generate
 generate:
 	go generate ./...
+
+b: build
+build:
+	go build -o api ./cmd
