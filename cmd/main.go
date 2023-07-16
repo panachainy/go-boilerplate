@@ -23,6 +23,4 @@ func main() {
 	if err := application.Server.Listen(":8080"); err != nil {
 		log.Fatal(err)
 	}
-
-	application.Log.Info("Application started successfully")
 }
