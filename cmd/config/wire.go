@@ -13,5 +13,6 @@ var ProviderSet = wire.NewSet(
 )
 
 func Wire() (*Configuration, error) {
-	panic(wire.Build(ProviderSet))
+	wire.Build(ProviderSet)
+	return &Configuration{}, nil
 }

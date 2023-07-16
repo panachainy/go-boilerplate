@@ -12,9 +12,11 @@ import (
 )
 
 func Wire() (*Application, error) {
-	panic(wire.Build(
+	wire.Build(
 		Provide,
 		config.ProviderSet,
 		log.ProviderSet,
-	))
+	)
+
+	return &Application{}, nil
 }

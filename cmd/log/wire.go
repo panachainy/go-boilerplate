@@ -14,5 +14,6 @@ var ProviderSet = wire.NewSet(
 )
 
 func Wire() (*logrus.Logger, error) {
-	panic(wire.Build(ProviderSet))
+	wire.Build(ProviderSet)
+	return &logrus.Logger{}, nil
 }
