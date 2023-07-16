@@ -13,5 +13,5 @@ docker build -t go-boilerplate .
 ```
 
 ```sh
-docker run go-boilerplate
+docker run -p 8080:8080 go-boilerplate
 ```
