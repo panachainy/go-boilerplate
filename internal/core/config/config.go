@@ -14,6 +14,8 @@ type Configuration struct {
 	APP_ENV  string `mapstructure:"APP_ENV"`
 	APP_PORT int    `mapstructure:"APP_PORT"`
 
+	DATABASE_DSN string `mapstructure:"EXAMPLE_CONFIG"`
+
 	DATABASE_HOST     string `mapstructure:"EXAMPLE_CONFIG"`
 	DATABASE_USER     string `mapstructure:"EXAMPLE_CONFIG"`
 	DATABASE_PASSWORD string `mapstructure:"EXAMPLE_CONFIG"`
