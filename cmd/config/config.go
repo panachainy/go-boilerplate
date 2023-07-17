@@ -11,13 +11,23 @@ import (
 )
 
 type Configuration struct {
-	ExampleConfig string `mapstructure:"EXAMPLE_CONFIG"`
+	APP_ENV  string `mapstructure:"APP_ENV"`
+	APP_PORT int    `mapstructure:"APP_PORT"`
+
+	DATABASE_HOST     string `mapstructure:"EXAMPLE_CONFIG"`
+	DATABASE_USER     string `mapstructure:"EXAMPLE_CONFIG"`
+	DATABASE_PASSWORD string `mapstructure:"EXAMPLE_CONFIG"`
+	DATABASE_NAME     string `mapstructure:"EXAMPLE_CONFIG"`
+	DATABASE_PORT     string `mapstructure:"EXAMPLE_CONFIG"`
+	DATABASE_SSLMODE  string `mapstructure:"EXAMPLE_CONFIG"`
+	DATABASE_TIMEZONE string `mapstructure:"EXAMPLE_CONFIG"`
 }
 
 var (
 	// default values
 	config = Configuration{
-		ExampleConfig: "example config value",
+		APP_ENV:  "development",
+		APP_PORT: 9090,
 	}
 	configOnce sync.Once
 )
