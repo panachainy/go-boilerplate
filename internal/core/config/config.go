@@ -14,15 +14,15 @@ type Configuration struct {
 	APP_ENV  string `mapstructure:"APP_ENV"`
 	APP_PORT int    `mapstructure:"APP_PORT"`
 
-	DATABASE_DSN string `mapstructure:"EXAMPLE_CONFIG"`
+	DATABASE_DSN string `mapstructure:"DATABASE_DSN"`
 
-	DATABASE_HOST     string `mapstructure:"EXAMPLE_CONFIG"`
-	DATABASE_USER     string `mapstructure:"EXAMPLE_CONFIG"`
-	DATABASE_PASSWORD string `mapstructure:"EXAMPLE_CONFIG"`
-	DATABASE_NAME     string `mapstructure:"EXAMPLE_CONFIG"`
-	DATABASE_PORT     string `mapstructure:"EXAMPLE_CONFIG"`
-	DATABASE_SSLMODE  string `mapstructure:"EXAMPLE_CONFIG"`
-	DATABASE_TIMEZONE string `mapstructure:"EXAMPLE_CONFIG"`
+	DATABASE_HOST     string `mapstructure:"DATABASE_HOST"`
+	DATABASE_USER     string `mapstructure:"DATABASE_USER"`
+	DATABASE_PASSWORD string `mapstructure:"DATABASE_PASSWORD"`
+	DATABASE_NAME     string `mapstructure:"DATABASE_NAME"`
+	DATABASE_PORT     string `mapstructure:"DATABASE_PORT"`
+	DATABASE_SSLMODE  string `mapstructure:"DATABASE_SSLMODE"`
+	DATABASE_TIMEZONE string `mapstructure:"DATABASE_TIMEZONE"`
 }
 
 var (
