@@ -36,8 +36,9 @@ func Provide() *logrus.Logger {
 
 		logrus.SetOutput(os.Stdout)
 
-		logrus.Infoln("[LOGRUS-CONFIG] Log level: ", logrus.GetLevel())
 		log = logrus.New()
+
+		log.Infoln("[LOGRUS-CONFIG] Log level: ", logrus.GetLevel())
 	})
 	return log
 }
