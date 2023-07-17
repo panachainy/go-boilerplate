@@ -29,7 +29,7 @@ var (
 	// default values
 	config = Configuration{
 		APP_ENV:  "development",
-		APP_PORT: 9090,
+		APP_PORT: 8080,
 	}
 	configOnce sync.Once
 )
