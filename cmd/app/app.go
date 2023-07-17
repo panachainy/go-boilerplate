@@ -1,7 +1,7 @@
 package app
 
 import (
-	"go-boilerplate/cmd/config"
+	"go-boilerplate/internal/core/config"
 	"sync"
 
 	"github.com/gofiber/fiber/v2"
