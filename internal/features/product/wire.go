@@ -21,6 +21,6 @@ var ProviderSet = wire.NewSet(
 	wire.Bind(new(domain.ProductRepository), new(*repository)),
 )
 
-func Wire(db *sql.DB) *service {
+func Wire(db *sql.DB) *domain.ProductHandler {
 	panic(wire.Build(ProviderSet))
 }
