@@ -14,10 +14,11 @@ import (
 
 // Injectors from wire.go:
 
-func Wire(db *sql.DB) *service {
+func Wire(db *sql.DB) *handler {
 	productRepository := ProvideRepository(db)
 	productService := ProvideService(productRepository)
-	return productService
+	productHandler := ProvideHandler(productService)
+	return productHandler
 }
 
 // wire.go:
