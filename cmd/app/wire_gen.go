@@ -7,8 +7,8 @@
 package app
 
 import (
-	"go-boilerplate/cmd/config"
 	"go-boilerplate/cmd/log"
+	"go-boilerplate/internal/core/config"
 )
 
 // Injectors from wire.go:

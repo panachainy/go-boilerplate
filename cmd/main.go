@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"go-boilerplate/cmd/app"
 	"log"
 
@@ -20,7 +21,5 @@ func main() {
 		})
 	})
 
-	if err := application.Server.Listen(":8080"); err != nil {
-		log.Fatal(err)
-	}
+	log.Fatal(application.Server.Listen(fmt.Sprintf(":%v", application.Config.APP_PORT)))
 }
